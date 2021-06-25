@@ -1,3 +1,4 @@
+import 'package:MyShop/screens/product_detail_screen.dart';
 import 'package:MyShop/screens/products_overview_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ProductsOverviewScreen(),
+      routes: {
+        ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+      },
     );
   }
 }
