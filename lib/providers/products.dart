@@ -1,4 +1,4 @@
-import 'package:MyShop/models/product.dart';
+import 'package:MyShop/providers/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class Products with ChangeNotifier {
