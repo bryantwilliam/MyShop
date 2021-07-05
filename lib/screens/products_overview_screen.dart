@@ -1,4 +1,6 @@
 import 'package:MyShop/providers/cart.dart';
+import 'package:MyShop/screens/cart_screen.dart';
+import 'package:MyShop/widgets/app_drawer.dart';
 import 'package:MyShop/widgets/badge.dart';
 import 'package:MyShop/widgets/products_grid.dart';
 import 'package:flutter/material.dart';
@@ -52,11 +54,14 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             ),
             child: IconButton(
               icon: Icon(Icons.shop),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(CartScreen.routeName);
+              },
             ),
           )
         ],
       ),
+      drawer: AppDrawer(),
       body: ProductsGrid(_showOnlyFavorites),
     );
   }
