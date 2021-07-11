@@ -94,7 +94,11 @@ class Products with ChangeNotifier {
   Future<void> fetchAndSetProducts() async {
     try {
       final response = await http.get(_productsUri);
-      final extractedData = json.decode(response.body) as Map<String, dynamic>;
+
+      var extractedData = json.decode(response.body);
+      if (extractedData == null || extractedData.isEmpty) return;
+      extractedData = extractedData as Map<String, dynamic>;
+
       final List<Product> loadedProducts = [];
       extractedData.forEach((prodId, prodData) {
         loadedProducts.insert(
